@@ -1,0 +1,20 @@
+#32位随机数
+baidu:
+  secret: ${random.value}
+  number: ${random.int}
+  name : www.baidu.com
+  desc : ${baidu.name}.domain is now
+
+
+#spring.jackson.date-format=yyyy-MM-ss HH:mm:ss
+
+
+spring :
+   jackson:
+    time-zone :  Asia/Chongqing
+
+
+
+server :
+  port:
+   8084

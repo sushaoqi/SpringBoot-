@@ -1,0 +1,50 @@
+spring:
+  profiles:
+    active: dev
+  #缓存配置
+  cache:
+    type: ehcache
+    ehcache:
+      config: classpath:ehcache.xml
+
+
+
+---
+spring:
+  profiles: dev
+  # 数据库配置
+  datasource:
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/ehcachetest?characterEncoding=utf8
+      username: root
+      password: 123
+  jpa:
+    database: MYSQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy
+      use_sql_comments: false
+      format_sql: true
+      hbm2ddl_auto: update
+      generate_statistics: false
+      validation_mode: none
+      store_data_at_delete: true
+      global_with_modified_flag: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+server:
+  port: 8080
+
+---
+spring:
+  profiles: pro
+server:
+  port: 8081
+
+---
+spring:
+  profiles: test
+server:
+  port: 8082
